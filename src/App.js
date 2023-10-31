@@ -1,29 +1,23 @@
 import './App.css';
+import HamburgerMenu from './HamburguerMenu';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
+      <header>
+        <HamburgerMenu /> {/* Agrega el menú de hamburguesa aquí */}
+        
+        <h1 className='Titulo'>Descubre Quién Soy</h1>
+        <nav>
+          {/* Aquí van tus enlaces de navegación */}
+        </nav>
       </header>
+      <main>
+        {/* Contenido principal de tu página */}
+      </main>
     </div>
   );
 }
 
 export default App;
+

@@ -1,0 +1,99 @@
+/* Estilos del Menú de Hamburguesa */
+
+/* Estilos para el icono de hamburguesa y su contenedor */
+.hamburger-menu {
+  position: fixed; /* Fija la posición del elemento */
+  top: 30px; /* Ajusta la posición vertical según tus preferencias */
+  left: 20px; /* Ajusta la posición horizontal según tus preferencias */
+  z-index: 1000; /* Establece la capa de z-index para la superposición */
+  background-color: #F18F01; /* Color de resaltado (amarillo anaranjado) */
+  border-radius: 50%; /* Forma circular para crear un botón redondeado */
+  padding: 10px; /* Añade relleno alrededor del botón */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s; /* Aplica una transición suave al color de fondo */
+}
+
+/* Estilos para el icono de hamburguesa y sus barras */
+.hamburger-icon {
+  display: flex; /* Utiliza un diseño flexbox para alinear elementos verticalmente */
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Distribuye el espacio verticalmente entre los elementos */
+  width: 30px; /* Ancho del icono de hamburguesa */
+  height: 30px; /* Altura del icono de hamburguesa */
+}
+
+.bar {
+  width: 100%; /* Ancho de las barras al 100% del contenedor */
+  height: 4px; /* Altura de las barras */
+  background-color: #FFF; /* Color blanco para las barras */
+  border-radius: 2px; /* Bordes redondeados para las barras */
+  transition: transform 0.3s, opacity 0.3s; /* Aplica transiciones suaves a la transformación y opacidad */
+}
+
+/* Estilos cuando el menú está abierto */
+.hamburger-menu.open {
+  background-color: transparent; /* Cambia a fondo transparente cuando se abre */
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg); /* Rota la primera barra */
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0; /* Oculta la segunda barra */
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg); /* Rota la tercera barra */
+}
+
+/* Estilos para el menú desplegable de navegación */
+.menu-items {
+  list-style: none; /* Elimina los marcadores de lista */
+  padding: 0; /* Elimina el relleno predeterminado de la lista */
+  position: absolute; /* Posición absoluta para superponer en el contenido */
+  top: 50px; /* Ajusta la posición vertical del menú desplegable */
+  left: 0; /* Ajusta la posición horizontal del menú desplegable */
+  background-color: #F18F01; /* Color de resaltado (amarillo anaranjado) */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+  opacity: 0; /* Inicialmente invisible */
+  pointer-events: none; /* Inicialmente no interactuable */
+  transition: opacity 0.3s; /* Aplica una transición suave a la opacidad */
+}
+
+/* Estilos para el menú desplegable cuando el menú está abierto */
+.hamburger-menu.open + .menu-items {
+  opacity: 1; /* Hace visible el menú desplegable */
+  pointer-events: auto; /* Permite la interacción con los elementos del menú */
+}
+.menu-items.open {
+  opacity: 1; /* Hace visible el menú desplegable */
+  pointer-events: auto; /* Permite la interacción con los elementos del menú */
+}
+
+.menu-items li {
+  font-family: 'Lato', sans-serif; /* Fuente Lato para los enlaces del menú */
+  font-size: 18px; /* Tamaño de fuente */
+  padding: 10px 20px; /* Espaciado en los elementos del menú */
+  color: #ffff; /* Color de texto en blanco */
+  transition: background-color 0.3s; /* Aplica una transición suave al color de fondo */
+}
+
+.menu-items li:hover {
+  background-color: #334257; /* Color de fondo al pasar el cursor (azul oscuro) */
+  border-radius: 5px; /* Bordes redondeados en los elementos al pasar el cursor */
+}
+
+/* Estilos para dispositivos móviles y tabletas (puedes ajustar los valores según tus necesidades) */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+      top: 10px; /* Ajusta la posición vertical en dispositivos más pequeños */
+      left: 10px; /* Ajusta la posición horizontal en dispositivos más pequeños */
+  }
+
+  .menu-items {
+      top: 40px; /* Ajusta la posición vertical del menú desplegable en dispositivos más pequeños */
+  }
+}
